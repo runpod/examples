@@ -33,39 +33,63 @@ npm i
 
 ## Examples
 
-### 1) Text Generation
+### 1) Text generation
 
-Runs `generate-text.js` with `deep-cogito/deep-cogito-v2-llama-70b`.
+Generate a short haiku using `deep-cogito/deep-cogito-v2-llama-70b` and print the text plus token usage.
 
 ```bash
 node generate-text.js
 ```
 
-### 2) Streaming Text
+### 2) Streaming text
 
-Runs `stream-text.js` with `qwen/qwen3-32b-awq`.
+Stream a bullet list of JavaScript tips from `qwen/qwen3-32b-awq` directly to the terminal and show usage.
 
 ```bash
 node stream-text.js
 ```
 
-### 3) Function Calling (Tools)
+### 3) Function calling (tools)
 
-Runs `tools-basic.js` using a calculator tool.
+Demonstrate function calling with a simple calculator tool (adds 1337 and 42) using `deep-cogito/deep-cogito-v2-llama-70b`.
 
 ```bash
 node tools-basic.js
 ```
 
-### 4) Image Generation
+### 4) Image generation
 
-Runs `generate-image.js` using a Flux model and saves a JPG.
+Generate an image with `black-forest-labs/flux-1-dev` and save it as a JPG with a timestamped filename.
 
 ```bash
 node generate-image.js
 ```
 
+### 5) Streaming reasoning (Qwen)
+
+Stream a step‑by‑step reasoning process from `qwen/qwen3-32b-awq` and the final answer.
+
+```bash
+node stream-reasoning-qwen.js
+```
+
 Output file name includes a timestamp, e.g. `generated-image-YYYY-MM-DDTHH-MM-SS-SSSZ.jpg`.
+
+### 6) Image edit (Flux Kontext)
+
+Edit an existing image using `black-forest-labs/flux-1-kontext-dev` by providing an input image URL and an edit prompt.
+
+```bash
+node edit-image-flux.js https://image.runpod.ai/asset/qwen/qwen-image-edit.png
+```
+
+### 7) Image edit (Qwen)
+
+Edit an existing image using `qwen/qwen-image-edit` with the same prompt semantics; saves a PNG file.
+
+```bash
+node edit-image-qwen.js https://image.runpod.ai/asset/qwen/qwen-image-edit.png
+```
 
 ---
 
