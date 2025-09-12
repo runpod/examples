@@ -33,6 +33,12 @@ Each resource folder MUST contain a `README.md` file with the following informat
 5.  **Usage:** Detailed instructions on how to use the included files (e.g., loading a workflow), potentially including multiple methods (drag & drop, menu).
 6.  **Workflow Preview (Optional):** If applicable (e.g., for ComfyUI workflows), include a preview image of the workflow/setup (ideally stored locally).
 
+## Console and Logging Style
+
+- use lowercase for log messages (e.g., `generated text`, `usage:`, `failed:`)
+- proper-case product names only (e.g., `Runpod`)
+- do not use emojis in console output
+
 ### README.md Template
 
 ```markdown

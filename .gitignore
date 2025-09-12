@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# node
+node_modules
+
+# ai-sdk
+generated-image*
