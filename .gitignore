@@ -180,3 +180,6 @@ node_modules
 # ai-sdk
 generated-image*
 edited-image*
+
+# mastra
+mastra.db
