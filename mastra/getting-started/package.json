@@ -1,0 +1,32 @@
+{
+  "name": "getting-started",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "mastra dev",
+    "build": "mastra build",
+    "start": "mastra start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@mastra/core": "^0.16.3",
+    "@mastra/libsql": "^0.14.1",
+    "@mastra/loggers": "^0.10.11",
+    "@mastra/memory": "^0.15.1",
+    "@runpod/ai-sdk-provider": "^0.6.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.3",
+    "mastra": "^0.12.3",
+    "typescript": "^5.9.2"
+  }
+}
