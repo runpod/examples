@@ -1,15 +1,15 @@
-# RunPod DevRel Resources
+<p align="center">
+  <img src="./public/runpod_sticker.png" alt="Runpod" width="300" />
+</p>
 
-This repository is a central hub for sharing workflows, configurations, guides, and other resources created by the RunPod DevRel team for the community.
+<h3 align="center">Runpod Examples</h3>
 
-## Purpose
+---
 
-The goal is to provide practical, ready-to-use examples and materials that complement our tutorials, videos, and blog posts, helping users leverage RunPod effectively for various AI/ML tasks.
+Hands‑on examples for building & deploying AI on [Runpod](https://runpod.io).
 
-## Structure
+- [ai-sdk](./ai-sdk) — Examples using the [Vercel AI SDK](https://sdk.vercel.ai) with [@runpod/ai-sdk-provider](https://www.npmjs.com/package/@runpod/ai-sdk-provider)
+- [mastra](./mastra) — Build agents with [Mastra](https://mastra.ai) + [@runpod/ai-sdk-provider](https://www.npmjs.com/package/@runpod/ai-sdk-provider)
+- [comfyui](./comfyui) — Ready-to-run ComfyUI workflows
 
-The repository is organized by software or platform. Each top-level folder (e.g., `comfyui`) contains subfolders for specific resources.
-
-## Conventions
-
-We aim for consistency across all shared resources. Please refer to the [**Resource Conventions**](./docs/conventions.md) document for details on the standard structure and `README.md` format expected within each resource subfolder.
+## Getting started
