@@ -15,8 +15,8 @@ async function main() {
   const { image } = await generateImage({
     model: runpod.imageModel("bytedance/seedream-4.0"),
     prompt,
-    // This model supports large sizes; default to 2048x2048
-    size: "2048x2048",
+    // full resolution
+    size: "4096x4096",
     providerOptions: {
       runpod: {
         negative_prompt: "",
