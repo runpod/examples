@@ -22,7 +22,7 @@ async function main() {
   const { image } = await generateImage({
     model: runpod.imageModel("bytedance/seedream-4.0-edit"),
     prompt,
-    size: "4096x4096",
+    size: "1024x1024",
     providerOptions: {
       runpod: {
         images,
