@@ -8,7 +8,7 @@ console.log("simple text generation (Runpod AI SDK Provider)\n");
 
 async function main() {
   // Choose one of the supported chat models; see provider README for list
-  const model = runpod("deep-cogito/deep-cogito-v2-llama-70b");
+  const model = runpod("qwen/qwen3-32b-awq");
 
   const { text, usage } = await generateText({
     model,

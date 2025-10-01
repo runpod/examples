@@ -35,7 +35,7 @@ Then open http://localhost:4111/agents/weatherAgent and chat with the `weatherAg
 
 ### Models
 
-The agent is currently configured to use `deep-cogito/deep-cogito-v2-llama-70b`, but you can use any model that supports tool calling from the [@runpod/ai-sdk-provider](https://www.npmjs.com/package/@runpod/ai-sdk-provider)
+The agent is currently configured to use `qwen/qwen3-32b-awq`, but you can use any model that supports tool calling from the [@runpod/ai-sdk-provider](https://www.npmjs.com/package/@runpod/ai-sdk-provider)
 
 ### Related examples
 
