@@ -18,7 +18,7 @@ const calculator = tool({
 
 async function main() {
   const result = await generateText({
-    model: runpod("deep-cogito/deep-cogito-v2-llama-70b"),
+    model: runpod("qwen/qwen3-32b-awq"),
     tools: { calculator },
     toolChoice: "auto",
     prompt:

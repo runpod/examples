@@ -20,7 +20,7 @@ export const weatherAgent = new Agent({
 
       Use the weatherTool to fetch current weather data.
 `,
-  model: runpod("deep-cogito/deep-cogito-v2-llama-70b"),
+  model: runpod("qwen/qwen3-32b-awq"),
   tools: { weatherTool },
   memory: new Memory({
     storage: new LibSQLStore({

@@ -35,7 +35,7 @@ npm i
 
 ### 1) Text generation
 
-Generate a short haiku using `deep-cogito/deep-cogito-v2-llama-70b` and print the text plus token usage.
+Generate a short haiku using `qwen/qwen3-32b-awq` and print the text plus token usage.
 
 ```bash
 node generate-text.js
@@ -51,7 +51,7 @@ node stream-text.js
 
 ### 3) Function calling (tools)
 
-Demonstrate function calling with a simple calculator tool (adds 1337 and 42) using `deep-cogito/deep-cogito-v2-llama-70b`.
+Demonstrate function calling with a simple calculator tool (adds 1337 and 42) using `qwen/qwen3-32b-awq`.
 
 ```bash
 node tools-basic.js
