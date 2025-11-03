@@ -2,6 +2,8 @@
 
 A lightweight Python script that continuously monitors a Runpod network volume, downloads new files, and automatically removes them after successful download. Perfect for automated file collection from Runpod instances without needing to keep a Pod running.
 
+Includes both AWS CLI and boto3 implementations in two seperate scripts.
+
 ## ✨ Features
 
 - 🔄 **Perpetual monitoring** - Runs continuously with configurable check intervals
