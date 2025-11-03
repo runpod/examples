@@ -31,10 +31,10 @@ Edit the configuration variables at the top of `downloader.py`:
 
 ```python
 # Your Runpod credentials
-ACCESS_KEY = 'user_2vHLfBBGYlhiWhSBi7RWLCPf7Sl'
-SECRET_KEY = 'rps_CB8781A2KZ1SVADZZT4CFI5E5LWZZYP5A01SDWVWn10vg9'
-NETWORK_VOLUME_ID = 'oijq0arb1f'
-DATACENTER = 'US-KS-2'
+ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'  # begins with user_
+SECRET_KEY = 'YOUR_SECRET_KEY_HERE'  # begins with rps_
+NETWORK_VOLUME_ID = ''               # get from Storage page in UI, e.g. omjq1arx12
+DATACENTER = 'US-KS-2'               # or whatever data center your volume lives in 
 
 # Remote folder to monitor
 REMOTE_FOLDER = 'ComfyUI/output'  # or '' for root
