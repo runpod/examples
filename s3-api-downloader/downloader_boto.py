@@ -12,12 +12,13 @@ import time
 import sys
 from pathlib import Path
 
-# Configuration
-ACCESS_KEY = 'user_2XfmTXF55RF8rUJVaOj7bPv77ve'
-SECRET_KEY = 'rps_Z12ZOUOHVD0OB3SBYXAUEU25N4CLIPF17TSACG7157myol'
-NETWORK_VOLUME_ID = 'jn6d4a9b1w'
-DATACENTER = 'us-ks-2'  # Note: lowercase for Boto3
-ENDPOINT_URL = 'https://s3api-us-ks-2.runpod.io/'
+# Refer to https://docs.runpod.io/storage/s3-api for datacenters and endpoint URLs
+
+ACCESS_KEY = 'ACCESS_KEY_HERE' # begins with user_
+SECRET_KEY = 'SECRET_KEY_HERE' # begins with rps_
+NETWORK_VOLUME_ID = 'VOLUME_ID_HERE' # pulled from network volume page, e.g. jn6d4a9b1x
+DATACENTER = 'us-ks-2' # e.g. us-ks-2; lowercase for Boto3. See docs page
+ENDPOINT_URL = 'https://s3api-us-ks-2.runpod.io/' # each DC has its own endpoint
 
 # Remote folder to monitor (empty string means root of network volume)
 REMOTE_FOLDER = 'ComfyUI/output'  # Change this to monitor a specific folder
