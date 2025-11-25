@@ -180,6 +180,10 @@ node_modules
 # ai-sdk
 generated-image*
 edited-image*
+*.mp4
 
 # mastra
 mastra.db
+
+# mac
+.DS_Store
