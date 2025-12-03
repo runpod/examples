@@ -13,14 +13,12 @@ async function main() {
 
   const { image } = await generateImage({
     model: runpod.imageModel("pruna/p-image-edit"),
-    prompt: "the lion is dressed up as santa claus, watercolor painting style",
+    prompt: "Transform the subject into a watercolor painting style",
     providerOptions: {
       runpod: {
         images: [imageUrl],
         aspect_ratio: "match_input_image",
-        seed: -1,
-        disable_safety_checker: false,
-        enable_sync_mode: false,
+        seed: 42,
       },
     },
   });
