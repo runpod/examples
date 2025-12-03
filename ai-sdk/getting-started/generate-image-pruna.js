@@ -8,16 +8,12 @@ dotenv.config({ quiet: true });
 console.log("image generation (pruna t2i) with Runpod AI SDK Provider\n");
 
 async function main() {
+  // Using standard AI SDK options (aspectRatio, seed) - no providerOptions needed
   const { image } = await generateImage({
     model: runpod.imageModel("pruna/p-image-t2i"),
     prompt: "A majestic lion standing on a rocky cliff at sunset",
-    providerOptions: {
-      runpod: {
-        aspect_ratio: "16:9",
-        enable_safety_checker: true,
-        seed: 0,
-      },
-    },
+    aspectRatio: "16:9",
+    seed: 42,
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
