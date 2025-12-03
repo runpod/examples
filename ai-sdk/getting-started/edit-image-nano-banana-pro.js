@@ -19,13 +19,12 @@ async function main() {
   const { image } = await generateImage({
     model: runpod.imageModel("google/nano-banana-pro-edit"),
     prompt,
+    aspectRatio: "16:9",
     providerOptions: {
       runpod: {
         images: [imageUrl],
         resolution: "1k",
         output_format: "jpeg",
-        enable_base64_output: false,
-        enable_sync_mode: false,
       },
     },
   });
