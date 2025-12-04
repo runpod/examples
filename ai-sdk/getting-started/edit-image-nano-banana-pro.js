@@ -16,6 +16,8 @@ async function main() {
     process.argv[3] ||
     "Add Christmas decorations to this cozy small town: twinkling Christmas lights along rooflines and windows, festive wreaths on front doors, Christmas trees visible through warm glowing windows, vintage street lamps wrapped in evergreen garlands with red bows, gazebo in the town square decorated with lights and ornaments, picket fences adorned with festive decorations, gentle snowfall, soft blanket of snow on rooftops and streets, warm holiday atmosphere with Christmas lights creating a magical glow, maintaining the cozy Christmas aesthetic.";
 
+  // Using standard AI SDK options where possible (aspectRatio)
+  // images, resolution, output_format need providerOptions
   const { image } = await generateImage({
     model: runpod.imageModel("google/nano-banana-pro-edit"),
     prompt,

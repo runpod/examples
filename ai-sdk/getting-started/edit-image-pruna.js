@@ -11,14 +11,16 @@ async function main() {
   const imageUrl =
     process.argv[2] || "https://image.runpod.ai/preview/pruna/p-image-t2i.png";
 
+  // Using standard AI SDK options where possible (aspectRatio, seed)
+  // images and pruna-specific aspect_ratio values need providerOptions
   const { image } = await generateImage({
     model: runpod.imageModel("pruna/p-image-edit"),
     prompt: "Transform the subject into a watercolor painting style",
+    aspectRatio: "1:1",
+    seed: 42,
     providerOptions: {
       runpod: {
         images: [imageUrl],
-        aspect_ratio: "match_input_image",
-        seed: 42,
       },
     },
   });
