@@ -8,14 +8,12 @@ dotenv.config({ quiet: true });
 console.log("speech generation (Runpod AI SDK Provider)\n");
 
 async function main() {
-  // You can pass either a serverless endpoint id or the full console URL.
-  const endpoint =
-    process.env.RUNPOD_SPEECH_ENDPOINT ||
-    "https://console.runpod.io/serverless/user/endpoint/uhyz0hnkemrk6r";
+  // Stealth speech model id. The provider maps it to the current endpoint.
+  const model = runpod.speechModel("resembleai/chatterbox-turbo");
 
   const text =
     process.env.RUNPOD_SPEECH_TEXT ||
-    "Hello, this is text-to-speech running on Runpod.";
+    "Hello, this is Chatterbox Turbo running on Runpod.";
 
   // Optional: choose a built-in voice name (default is provider-side).
   const voice = process.env.RUNPOD_SPEECH_VOICE || "lucy";
@@ -24,10 +22,9 @@ async function main() {
   const voiceUrl = process.env.RUNPOD_SPEECH_VOICE_URL;
 
   const result = await generateSpeech({
-    model: runpod.speechModel(endpoint),
+    model,
     text,
     outputFormat: "wav",
-    // If you provide a voiceUrl, the endpoint will use that prompt instead of the built-in voices.
     ...(voiceUrl
       ? {
           providerOptions: {
