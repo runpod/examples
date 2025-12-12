@@ -7,21 +7,37 @@ dotenv.config({ quiet: true });
 
 console.log("speech generation (Runpod AI SDK Provider)\n");
 
-async function main() {
-  // Stealth speech model id. The provider maps it to the current endpoint.
-  const model = runpod.speechModel("resembleai/chatterbox-turbo");
+function usageAndExit() {
+  console.log("usage:");
+  console.log(
+    "  node generate-speech.js [text] [voice] [voiceUrl]\n\n" +
+      "examples:\n" +
+      '  node generate-speech.js "Hello, this is Chatterbox Turbo running on Runpod"\n' +
+      '  node generate-speech.js "Hello" lucy\n' +
+      '  node generate-speech.js "Hello" lucy https://example.com/voice.wav\n'
+  );
+  process.exit(1);
+}
 
-  const text =
-    process.env.RUNPOD_SPEECH_TEXT ||
-    "Hello, this is Chatterbox Turbo running on Runpod.";
+async function main() {
+  const [, , textArg, voiceArg, voiceUrlArg] = process.argv;
+
+  // Stealth speech model id. The provider maps it to the current endpoint.
+  const model = runpod.speech("resembleai/chatterbox-turbo");
+
+  const text = textArg || "Hello, this is Chatterbox Turbo running on Runpod.";
+
+  if (text === "--help" || text === "-h") {
+    usageAndExit();
+  }
 
   // Optional: choose a built-in voice name (default is provider-side).
-  const voice = process.env.RUNPOD_SPEECH_VOICE || "lucy";
+  const voice = voiceArg || "lucy";
 
   // Optional: provide a URL to 5-10 seconds of voice audio to clone.
-  const voiceUrl = process.env.RUNPOD_SPEECH_VOICE_URL;
+  const voiceUrl = voiceUrlArg;
 
-  const result = await generateSpeech({
+  const { audio, providerMetadata, warnings } = await generateSpeech({
     model,
     text,
     outputFormat: "wav",
@@ -35,17 +51,22 @@ async function main() {
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const filename = `generated-speech-${timestamp}.${result.audio.format}`;
+  const filename = `generated-speech-${timestamp}.${audio.format}`;
 
-  writeFileSync(filename, result.audio.uint8Array);
+  writeFileSync(filename, audio.uint8Array);
 
   console.log(`saved audio: ${filename}`);
-  console.log(`mediaType: ${result.audio.mediaType}`);
-  console.log(`size: ${(result.audio.uint8Array.length / 1024).toFixed(1)}KB`);
+  console.log(`mediaType: ${audio.mediaType}`);
+  console.log(`size: ${(audio.uint8Array.length / 1024).toFixed(1)}KB`);
 
-  if (result.warnings?.length) {
+  if (providerMetadata?.runpod) {
+    console.log("\nproviderMetadata.runpod:");
+    console.log(providerMetadata.runpod);
+  }
+
+  if (warnings?.length) {
     console.log("\nwarnings:");
-    console.log(result.warnings);
+    console.log(warnings);
   }
 }
 
