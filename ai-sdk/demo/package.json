@@ -1,0 +1,18 @@
+{
+  "name": "runpod-aisdk-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Demos showcasing Pruna p-image-edit with @runpod/ai-sdk-provider.",
+  "scripts": {
+    "staging:generate": "node 05-virtual-staging/generate.js",
+    "staging:transform": "node 05-virtual-staging/transform.js",
+    "weather:generate": "node 11-weather-time-setter/generate-scene.js",
+    "weather:transform": "node 11-weather-time-setter/transform.js"
+  },
+  "dependencies": {
+    "@runpod/ai-sdk-provider": "^0.11.0",
+    "ai": "^5.0.13",
+    "dotenv": "^17.2.1"
+  }
+}
