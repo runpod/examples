@@ -7,7 +7,7 @@
   "scripts": {},
   "dependencies": {
     "@ai-sdk/openai": "^2.0.13",
-    "@runpod/ai-sdk-provider": "^0.11.0",
+    "@runpod/ai-sdk-provider": "^0.12.0",
     "ai": "^5.0.13",
     "dotenv": "^17.2.1",
     "zod": "^3.25.76"

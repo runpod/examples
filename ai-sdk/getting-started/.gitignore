@@ -1,0 +1,10 @@
+#
+# Local-only artifacts (do not commit for now)
+#
+
+# Benchmark results written by the benchmark script(s)
+bench-*.json
+
+# Audio generated during local testing
+*.wav
+
