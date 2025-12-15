@@ -1,0 +1,3 @@
+# Local-only benchmark artifacts
+bench-*.json
+*.wav

@@ -91,12 +91,14 @@ Edit an existing image using `qwen/qwen-image-edit` with the same prompt semanti
 node edit-image-qwen.js https://image.runpod.ai/asset/qwen/qwen-image-edit.png
 ```
 
-### 8) Speech generation (experimental)
+### 8) Speech generation
 
 Generate speech audio using `experimental_generateSpeech` and save it as a WAV file.
 
+> Note: This speech endpoint currently returns WAV only; `outputFormat` is ignored.
+
 ```bash
-node generate-speech.js "Hello, this is Chatterbox Turbo running on Runpod." lucy
+node generate-speech-chatterbox-turbo.js
 ```
 
 ---
