@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.13
         version: 2.0.86(zod@3.25.76)
       '@runpod/ai-sdk-provider':
-        specifier: ^0.12.0
-        version: 0.12.0(zod@3.25.76)
+        specifier: ^1.0.0
+        version: 1.0.0(zod@3.25.76)
       ai:
         specifier: ^6.0.0
         version: 6.0.2(zod@3.25.76)
@@ -32,8 +32,8 @@ packages:
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/openai-compatible@1.0.29':
-    resolution: {integrity: sha512-cZUppWzxjfpNaH1oVZ6U8yDLKKsdGbC9X0Pex8cG9CXhKWSoVLLnW1rKr6tu9jDISK5okjBIW/O1ZzfnbUrtEw==}
+  '@ai-sdk/openai-compatible@2.0.0':
+    resolution: {integrity: sha512-dQITHbDWLtIVB0Kpb9AXRMAZC2n4azS2T/uaVq8HOgw2Uy9x19usS0DIoXlTbj3R4rJuJXpAUhYowQ+YcK16WQ==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -68,8 +68,8 @@ packages:
     resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
     engines: {node: '>=8.0.0'}
 
-  '@runpod/ai-sdk-provider@0.12.0':
-    resolution: {integrity: sha512-Wa+1BnzB/XtmGZBO4x22U8wsjiK4ylyNpwMC1RYf1mRS6W6h7qAlq2tDy39lF4CRWFHa7FZn0tad4wkFqDiHKA==}
+  '@runpod/ai-sdk-provider@1.0.0':
+    resolution: {integrity: sha512-Jx0JsQxjPjne6A4i0Wqpt/E04u4yzhl66CCH+JqxDJgzBilPZOyGWdHr71U/f7frkhQJkKl66Q9kdmTLVqjQ9A==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4
@@ -113,10 +113,10 @@ snapshots:
       '@vercel/oidc': 3.0.5
       zod: 3.25.76
 
-  '@ai-sdk/openai-compatible@1.0.29(zod@3.25.76)':
+  '@ai-sdk/openai-compatible@2.0.0(zod@3.25.76)':
     dependencies:
-      '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.19(zod@3.25.76)
+      '@ai-sdk/provider': 3.0.0
+      '@ai-sdk/provider-utils': 4.0.0(zod@3.25.76)
       zod: 3.25.76
 
   '@ai-sdk/openai@2.0.86(zod@3.25.76)':
@@ -149,11 +149,11 @@ snapshots:
 
   '@opentelemetry/api@1.9.0': {}
 
-  '@runpod/ai-sdk-provider@0.12.0(zod@3.25.76)':
+  '@runpod/ai-sdk-provider@1.0.0(zod@3.25.76)':
     dependencies:
-      '@ai-sdk/openai-compatible': 1.0.29(zod@3.25.76)
-      '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.19(zod@3.25.76)
+      '@ai-sdk/openai-compatible': 2.0.0(zod@3.25.76)
+      '@ai-sdk/provider': 3.0.0
+      '@ai-sdk/provider-utils': 4.0.0(zod@3.25.76)
       zod: 3.25.76
 
   '@standard-schema/spec@1.0.0': {}
