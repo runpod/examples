@@ -41,12 +41,14 @@ async function main() {
   console.log(imageDataUrl.slice(0, 30));
 
   const { image } = await generateImage({
-    model: runpod.imageModel("bytedance/seedream-4.0-edit"),
-    prompt,
+    model: runpod.image("bytedance/seedream-4.0-edit"),
+    prompt: {
+      text: prompt,
+      images: [imageDataUrl],
+    },
     size: "1024x1024",
     providerOptions: {
       runpod: {
-        images: [imageDataUrl],
         enable_safety_checker: true,
       },
     },
