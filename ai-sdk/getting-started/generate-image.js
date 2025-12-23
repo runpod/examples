@@ -9,7 +9,7 @@ console.log("image generation (Runpod AI SDK Provider)\n");
 
 async function main() {
   const { image } = await generateImage({
-    model: runpod.imageModel("black-forest-labs/flux-1-dev"),
+    model: runpod.image("pruna/p-image-t2i"),
     prompt: "A cozy cabin in the woods at golden hour, cinematic lighting",
     aspectRatio: "4:3",
   });

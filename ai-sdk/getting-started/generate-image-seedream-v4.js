@@ -13,7 +13,7 @@ async function main() {
     "American retro 1950s illustration style — an abandoned atomic-age town in ruins, cracked pavement and faded road signs, rusted 1950s cars half-buried in dust, tilted power lines, pastel-colored buildings crumbling under a hazy golden sky — soft film grain, worn paper texture, sunbeams breaking through dusty air — wisps of eerie green radiation mist drifting along the ground, faint green glow seeping from cracked windows and broken streetlamps, subtle radioactive haze hanging in the distance, wide desolate street receding into the horizon, eerie yet nostalgic atmosphere.";
 
   const { image } = await generateImage({
-    model: runpod.imageModel("bytedance/seedream-4.0"),
+    model: runpod.image("bytedance/seedream-4.0"),
     prompt,
     // This model supports large sizes; default to 2048x2048
     size: "2048x2048",

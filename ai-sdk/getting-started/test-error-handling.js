@@ -36,7 +36,7 @@ async function testImageErrorInvalidSize() {
   console.log("2. Testing image model error (unsupported size)...");
   try {
     await generateImage({
-      model: runpod.imageModel("black-forest-labs/flux-1-dev"),
+      model: runpod.image("black-forest-labs/flux-1-dev"),
       prompt: "A test image",
       size: "9999x9999", // Invalid size
     });
@@ -52,7 +52,7 @@ async function testImageErrorInvalidModel() {
   console.log("3. Testing image model error (invalid model ID)...");
   try {
     await generateImage({
-      model: runpod.imageModel("nonexistent/model-id"),
+      model: runpod.image("nonexistent/model-id"),
       prompt: "A test image",
     });
   } catch (err) {

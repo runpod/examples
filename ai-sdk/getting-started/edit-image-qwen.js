@@ -12,12 +12,14 @@ async function main() {
     process.argv[2] || "https://image.runpod.ai/asset/qwen/qwen-image-edit.png";
 
   const { image } = await generateImage({
-    model: runpod.imageModel("qwen/qwen-image-edit"),
-    prompt: "change the trench coat and high heels color to light grey",
+    model: runpod.image("qwen/qwen-image-edit"),
+    prompt: {
+      text: "change the trench coat and high heels color to light grey",
+      images: [imageUrl],
+    },
     aspectRatio: "1:1",
     providerOptions: {
       runpod: {
-        image: imageUrl,
         output_format: "png",
         enable_safety_checker: true,
       },
