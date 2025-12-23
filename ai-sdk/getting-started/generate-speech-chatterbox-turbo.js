@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { writeFileSync } from "fs";
 import { runpod } from "@runpod/ai-sdk-provider";
-import { experimental_generateSpeech as generateSpeech } from "ai";
+import { generateSpeech } from "ai";
 
 dotenv.config({ quiet: true });
 

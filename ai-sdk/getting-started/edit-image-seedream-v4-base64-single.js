@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import { runpod } from "@runpod/ai-sdk-provider";
-import { experimental_generateImage as generateImage } from "ai";
+import { generateImage } from "ai";
 import { writeFileSync, readFileSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
