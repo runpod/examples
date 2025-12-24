@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { runpod } from "@runpod/ai-sdk-provider";
 import { generateText } from "ai";
-import { experimental_generateImage as generateImage } from "ai";
+import { generateImage } from "ai";
 
 dotenv.config({ quiet: true });
 

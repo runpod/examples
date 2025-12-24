@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import { runpod } from "@runpod/ai-sdk-provider";
-import { experimental_generateImage as generateImage } from "ai";
+import { generateImage } from "ai";
 import { writeFileSync } from "fs";
 
 dotenv.config({ quiet: true });
