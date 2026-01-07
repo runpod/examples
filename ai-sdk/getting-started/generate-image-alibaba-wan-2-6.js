@@ -12,7 +12,7 @@ async function main() {
     model: runpod.image("alibaba/wan-2.6"),
     prompt:
       "A majestic Chinese dragon made of flowing neon light tubes, coiling through a cyberpunk city at night, reflections on wet streets, vibrant pink and cyan colors, ultra detailed, cinematic composition. Negative prompt: blurry, watermark, text, low resolution",
-    aspectRatio: "1:1",
+    size: "1280x1280",
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
