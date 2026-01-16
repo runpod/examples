@@ -181,6 +181,7 @@ node_modules
 generated-image*
 edited-image*
 *.mp4
+*.wav
 
 # mastra
 mastra.db
