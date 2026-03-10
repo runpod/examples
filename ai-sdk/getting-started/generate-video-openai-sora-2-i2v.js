@@ -5,18 +5,25 @@ import { writeFileSync } from "fs";
 
 dotenv.config({ quiet: true });
 
-console.log("generate-video\n");
+console.log("generate-video-openai-sora-2-i2v\n");
 
 async function main() {
+  const imageUrl =
+    process.argv[2] ||
+    "https://image.runpod.ai/demo/mountain-lake-reflection-1280x720.png";
+
   const { video } = await generateVideo({
-    model: runpod.video("alibaba/wan-2.6-t2v"),
-    prompt:
-      "A serene sunrise timelapse over snowy mountains, cinematic, high detail",
+    model: runpod.video("openai/sora-2-i2v"),
+    prompt: {
+      text: "Animate the mountain lake with gentle ripples breaking the mirror-like reflection, clouds drifting slowly over snow-capped peaks, wildflowers swaying in the breeze",
+      image: imageUrl,
+    },
     aspectRatio: "16:9",
+    duration: 4,
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const filename = `generated-video-${timestamp}.mp4`;
+  const filename = `generated-video-openai-sora-2-i2v-${timestamp}.mp4`;
 
   writeFileSync(filename, video.uint8Array);
   console.log(`saved video: ${filename}`);

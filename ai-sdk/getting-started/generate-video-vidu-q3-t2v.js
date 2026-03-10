@@ -5,18 +5,18 @@ import { writeFileSync } from "fs";
 
 dotenv.config({ quiet: true });
 
-console.log("generate-video\n");
+console.log("generate-video-vidu-q3-t2v\n");
 
 async function main() {
   const { video } = await generateVideo({
-    model: runpod.video("alibaba/wan-2.6-t2v"),
+    model: runpod.video("vidu/q3-t2v"),
     prompt:
-      "A serene sunrise timelapse over snowy mountains, cinematic, high detail",
+      "A futuristic city skyline at night with neon lights reflecting on wet streets, cyberpunk atmosphere",
     aspectRatio: "16:9",
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const filename = `generated-video-${timestamp}.mp4`;
+  const filename = `generated-video-vidu-q3-t2v-${timestamp}.mp4`;
 
   writeFileSync(filename, video.uint8Array);
   console.log(`saved video: ${filename}`);
