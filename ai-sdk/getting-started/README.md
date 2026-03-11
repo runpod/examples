@@ -65,7 +65,15 @@ Generate an image with `black-forest-labs/flux-1-dev` and save it as a JPG with 
 node generate-image.js
 ```
 
-### 5) Streaming reasoning (Qwen)
+### 5) Image generation (Z-Image Turbo)
+
+Generate a 16:9 image with `tongyi-mai/z-image-turbo` and save it as a PNG with a timestamped filename.
+
+```bash
+node generate-image-z-image-turbo.js
+```
+
+### 6) Streaming reasoning (Qwen)
 
 Stream a step‑by‑step reasoning process from `qwen/qwen3-32b-awq` and the final answer.
 
@@ -75,7 +83,7 @@ node stream-reasoning-qwen.js
 
 Output file name includes a timestamp, e.g. `generated-image-YYYY-MM-DDTHH-MM-SS-SSSZ.jpg`.
 
-### 6) Image edit (Flux Kontext)
+### 7) Image edit (Flux Kontext)
 
 Edit an existing image using `black-forest-labs/flux-1-kontext-dev` by providing an input image URL and an edit prompt.
 
@@ -83,7 +91,7 @@ Edit an existing image using `black-forest-labs/flux-1-kontext-dev` by providing
 node edit-image-flux.js https://image.runpod.ai/asset/qwen/qwen-image-edit.png
 ```
 
-### 7) Image edit (Qwen)
+### 8) Image edit (Qwen)
 
 Edit an existing image using `qwen/qwen-image-edit` with the same prompt semantics; saves a PNG file.
 
@@ -91,7 +99,7 @@ Edit an existing image using `qwen/qwen-image-edit` with the same prompt semanti
 node edit-image-qwen.js https://image.runpod.ai/asset/qwen/qwen-image-edit.png
 ```
 
-### 8) Speech generation
+### 9) Speech generation
 
 Generate speech audio using `generateSpeech` and save it as a WAV file.
 
