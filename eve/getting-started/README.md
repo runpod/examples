@@ -37,11 +37,26 @@ runpodctl serverless create \
   --workers-min 0 --workers-max 1 --idle-timeout 300 \
   --model-reference https://huggingface.co/Qwen/Qwen3.6-27B-FP8:main \
   --env MODEL_NAME=Qwen/Qwen3.6-27B-FP8 \
+  --env OPENAI_SERVED_MODEL_NAME_OVERRIDE=Qwen/Qwen3.6-27B-FP8 \
   --env MAX_MODEL_LEN=32768 \
   --env GPU_MEMORY_UTILIZATION=0.90 \
   --env ENABLE_AUTO_TOOL_CHOICE=true \
   --env TOOL_CALL_PARSER=qwen3_xml \
   --env REASONING_PARSER=qwen3
+```
+
+The `OPENAI_SERVED_MODEL_NAME_OVERRIDE` is required: with a cached model,
+worker-vllm otherwise serves it under its on-disk snapshot path rather than
+`MODEL_NAME`, and every request would 404 (see
+[worker-vllm#310](https://github.com/runpod-workers/worker-vllm/issues/310)).
+The override pins the served name to `Qwen/Qwen3.6-27B-FP8`.
+
+Verify the endpoint serves under that name (it cold-starts on first call, ~2–5 min):
+
+```bash
+curl -s -H "Authorization: Bearer $RUNPOD_API_KEY" \
+  https://api.runpod.ai/v2/<endpoint-id>/openai/v1/models
+# the returned "id" should be exactly Qwen/Qwen3.6-27B-FP8
 ```
 
 Copy the returned endpoint `id` into `.env.local`, and add your API key:
