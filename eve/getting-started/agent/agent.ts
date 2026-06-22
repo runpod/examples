@@ -14,8 +14,7 @@ const runpod = createRunpod({
   baseURL: `https://api.runpod.ai/v2/${endpointId}/openai/v1`,
 });
 
-// The model id must match the name vLLM serves on that endpoint. See AGENTS.md:
-// with OPENAI_SERVED_MODEL_NAME_OVERRIDE set, this is just MODEL_NAME.
+// The model id must match the name vLLM serves on the endpoint (its MODEL_NAME).
 const MODEL = process.env.RUNPOD_LLM_MODEL ?? "Qwen/Qwen3.6-27B-FP8";
 
 export default defineAgent({
