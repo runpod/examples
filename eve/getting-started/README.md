@@ -1,3 +1,5 @@
+![Getting Started with Eve on Runpod](./banner.png)
+
 # Getting Started with Eve on Runpod
 
 An image-generating AI agent built with [**Eve**](https://www.npmjs.com/package/eve)
