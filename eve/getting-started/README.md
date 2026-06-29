@@ -29,13 +29,6 @@ commands, flags, and deploy flow:
 npx skills add runpod/skills --skill runpodctl
 ```
 
-It installs to `.agents/skills/runpodctl` and works across all major agents. List
-everything in the repo (also includes `flash` and `companion-clis`) with:
-
-```bash
-npx skills add runpod/skills --list
-```
-
 ## 1. Install
 
 ```bash
