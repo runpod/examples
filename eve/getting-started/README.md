@@ -18,6 +18,24 @@ Browser ─ Next.js chat UI ─ Eve agent
 - A [Runpod account](https://runpod.io) + [API key](https://console.runpod.io/user/settings) with credits.
 - [Node 24](https://nodejs.org) and [`runpodctl`](https://github.com/runpod/runpodctl) **v2.6.0+**.
 
+## Building this with an AI agent?
+
+This tutorial drives Runpod with `runpodctl`. If you're following along with a
+coding agent (Claude Code, Cursor, Codex, Gemini CLI, …), install the **runpodctl
+[skill](https://skills.sh/runpod/skills)** first so the agent knows the exact
+commands, flags, and deploy flow:
+
+```bash
+npx skills add runpod/skills --skill runpodctl
+```
+
+It installs to `.agents/skills/runpodctl` and works across all major agents. List
+everything in the repo (also includes `flash` and `companion-clis`) with:
+
+```bash
+npx skills add runpod/skills --list
+```
+
 ## 1. Install
 
 ```bash
