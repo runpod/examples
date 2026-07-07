@@ -5,18 +5,24 @@ import { writeFileSync } from "fs";
 
 dotenv.config({ quiet: true });
 
-console.log("generate-video\n");
+console.log("generate-video-kwaivgi-kling-v2-1-i2v-pro\n");
 
 async function main() {
+  const imageUrl =
+    process.argv[2] ||
+    "https://image.runpod.ai/demo/northern-lights-cabin-1280x720.png";
+
   const { video } = await generateVideo({
-    model: runpod.video("alibaba/wan-2.6-t2v"),
-    prompt:
-      "A serene sunrise timelapse over snowy mountains, cinematic, high detail",
+    model: runpod.video("kwaivgi/kling-v2.1-i2v-pro"),
+    prompt: {
+      text: "Animate the aurora borealis dancing and shimmering across the night sky, warm light flickering in the cabin windows, snow gently falling",
+      image: imageUrl,
+    },
     aspectRatio: "16:9",
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const filename = `generated-video-${timestamp}.mp4`;
+  const filename = `generated-video-kwaivgi-kling-v2-1-i2v-pro-${timestamp}.mp4`;
 
   writeFileSync(filename, video.uint8Array);
   console.log(`saved video: ${filename}`);

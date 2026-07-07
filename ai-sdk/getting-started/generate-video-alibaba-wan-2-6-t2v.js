@@ -5,18 +5,18 @@ import { writeFileSync } from "fs";
 
 dotenv.config({ quiet: true });
 
-console.log("generate-video\n");
+console.log("generate-video-alibaba-wan-2-6-t2v\n");
 
 async function main() {
   const { video } = await generateVideo({
     model: runpod.video("alibaba/wan-2.6-t2v"),
     prompt:
-      "A serene sunrise timelapse over snowy mountains, cinematic, high detail",
+      "An astronaut floating in space with Earth visible in the background, photorealistic, 4K",
     aspectRatio: "16:9",
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const filename = `generated-video-${timestamp}.mp4`;
+  const filename = `generated-video-alibaba-wan-2-6-t2v-${timestamp}.mp4`;
 
   writeFileSync(filename, video.uint8Array);
   console.log(`saved video: ${filename}`);

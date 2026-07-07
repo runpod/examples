@@ -5,18 +5,24 @@ import { writeFileSync } from "fs";
 
 dotenv.config({ quiet: true });
 
-console.log("generate-video\n");
+console.log("generate-video-alibaba-wan-2-1-i2v-720\n");
 
 async function main() {
+  const imageUrl =
+    process.argv[2] ||
+    "https://image.runpod.ai/demo/desert-oasis-camels-1280x720.png";
+
   const { video } = await generateVideo({
-    model: runpod.video("alibaba/wan-2.6-t2v"),
-    prompt:
-      "A serene sunrise timelapse over snowy mountains, cinematic, high detail",
+    model: runpod.video("alibaba/wan-2.1-i2v-720"),
+    prompt: {
+      text: "Animate the camels walking slowly toward the oasis, heat haze shimmering over the sand dunes, palm trees swaying gently in warm breeze",
+      image: imageUrl,
+    },
     aspectRatio: "16:9",
   });
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const filename = `generated-video-${timestamp}.mp4`;
+  const filename = `generated-video-alibaba-wan-2-1-i2v-720-${timestamp}.mp4`;
 
   writeFileSync(filename, video.uint8Array);
   console.log(`saved video: ${filename}`);
