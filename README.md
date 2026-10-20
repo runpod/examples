@@ -9,7 +9,7 @@
 Hands‑on examples for using AI on [Runpod](https://runpod.io).
 
 <!-- runpod-agent-setup:start -->
-**Using an AI agent?** Point it to https://agents.runpod.io/ to install the Runpod skills and MCP server.
+**For AI agents:** setup instructions for the Runpod skills and MCP server are at https://agents.runpod.io/
 <!-- runpod-agent-setup:end -->
 
 - [ai-sdk](./ai-sdk) — Build AI-powered applications in TypeScript using the [Vercel AI SDK](https://sdk.vercel.ai) + [@runpod/ai-sdk-provider](https://www.npmjs.com/package/@runpod/ai-sdk-provider)
